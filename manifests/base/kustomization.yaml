@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: my-app
+labels:
+- includeSelectors: true
+  pairs:
+    app: my-app
+resources:
+- namespace.yaml
+- service_account.yaml
+- ingress.yaml
+- service.yaml
+- deployment.yaml
+- hpa.yaml
+- pdb.yaml
